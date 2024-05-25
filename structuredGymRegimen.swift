@@ -57,7 +57,36 @@ init (dayOfWeek:String, exercises: [Exercise]){
   self.dayOfWeek = dayOfWeek
   self.exercises = exercises
 }
+
+func printExercisePlan() {  
+  print("Today is \(self.dayOfWeek) and the plan is to:")
+  for exercise in self.exercises{
+    print("Do \(exercise.sets)sets of \(exercise.reps) \(exercise.name)s ")
+    print("That's a total of \(exercise.reps) \(exercise.name)s")
+  }
+}
+
 }
 
 var mondayRegimen = Regimen(dayOfWeek:"Monday", exercises: [pushUp])
-print(mondayRegimen)
+mondayRegimen.printExercisePlan()
+
+//Forming an Exercise Plan
+/*
+Let’s add a method to the Regimen structure to make it even more useful. This method will print out what day of the week it is and what exercises to do and how many times to do them for.
+
+Inside the Regimen struct, create a method called printExercisePlan() that doesn’t have any parameters and doesn’t return anything.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
