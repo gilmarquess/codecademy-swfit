@@ -38,3 +38,26 @@ sets: 3
 You may want to change the values to suit your goals but we’ll be using this example in the later steps.
 */
 var pushUp = Exercise(name:"Push up", muscleGroups:["Triceps", "Shoulders","Chest"], reps: 10, sets: 3)
+
+
+//Creating The Regimen Structure
+/*With our Exercise instance(s) set up, we can now create another structure that holds the template for each day of the week. Once again, let’s set up a plan before we commit to writing any code.
+
+This structure will model a regimen that keeps track of our day’s exercises. For example, we’ll have a Monday regimen that contains the exercises we want to do on Mondays. Tuesday’s regimen will contain another list of exercises that are done on Tuesdays.
+
+This means we’ll need a structure to:
+
+Keep track of what day of the week it is.
+Store an array of Exercise instances.
+*/
+struct Regimen{
+  var dayOfWeek: String
+  var exercises: [Exercise]
+init (dayOfWeek:String, exercises: [Exercise]){
+  self.dayOfWeek = dayOfWeek
+  self.exercises = exercises
+}
+}
+
+var mondayRegimen = Regimen(dayOfWeek:"Monday", exercises: [pushUp])
+print(mondayRegimen)
